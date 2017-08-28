@@ -1,0 +1,12 @@
+[user]
+    email = v.gamula@gmail.com
+    name = Volodymyr Gamula
+[alias]
+    co = checkout
+    st = status -sb
+    ci = commit -a
+    cm = commit -a -m
+    com = commit -m
+    df = diff
+    dfc = diff --cached
+    dfa = diff HEAD
