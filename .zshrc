@@ -14,3 +14,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 func p() {
     cd ~/projects/$1
 }
+
+func iv() {
+    python3 ~/bin/iv.py ./project.clj | tee /dev/tty | tr -d  '\n' | pbcopy
+}
+
+func gpr() {
+    python3 ~/bin/gpr.py
+}
