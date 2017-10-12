@@ -16,4 +16,4 @@ branch_name = exec_bash("git rev-parse --abbrev-ref HEAD")
 target = 'production'
 org_repo = origin_url[origin_url.find(':')+1:origin_url.rfind('.git')]
 
-print(f'https://github.com/{org_repo}/compare/{branch_name}...{target}')
+print(f'https://github.com/{org_repo}/compare/{target}...{branch_name}')
