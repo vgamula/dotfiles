@@ -1,6 +1,6 @@
 ## Outputs link for creating pull request on github.com
-## TODO: Extract target branch
 
+import os
 import sys
 import subprocess
 
@@ -12,8 +12,13 @@ def exec_bash(cmd):
 
 
 origin_url = exec_bash("git remote get-url origin")
-branch_name = exec_bash("git rev-parse --abbrev-ref HEAD")
-target = 'production'
 org_repo = origin_url[origin_url.find(':')+1:origin_url.rfind('.git')]
+current_branch = exec_bash("git rev-parse --abbrev-ref HEAD")
 
-print(f'https://github.com/{org_repo}/compare/{target}...{branch_name}')
+
+target_branch = 'production'
+env_target = os.environ.get('TARGET')
+if env_target and env_target != '':
+    target_branch = env_target
+
+print(f'https://github.com/{org_repo}/compare/{target_branch}...{current_branch}')
