@@ -20,5 +20,5 @@ func iv() {
 }
 
 func gpr() {
-    python3 ~/bin/gpr.py
+    TARGET=$1 python3 ~/bin/gpr.py
 }
