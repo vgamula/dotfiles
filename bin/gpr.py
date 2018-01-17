@@ -21,4 +21,8 @@ env_target = os.environ.get('TARGET')
 if env_target and env_target != '':
     target_branch = env_target
 
-print(f'https://github.com/{org_repo}/compare/{target_branch}...{current_branch}')
+print('https://github.com/{org_repo}/compare/{target_branch}...{current_branch}'.format(
+    org_repo=org_repo,
+    target_branch=target_branch,
+    current_branch=current_branch,
+))
