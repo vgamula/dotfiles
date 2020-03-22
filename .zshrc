@@ -53,9 +53,9 @@ func restart-bluetooth-audio() {
     rm ~/Library/Preferences/com.apple.preference.general.plist
     blueutil -p 0
     sleep 1
-    sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
-    sudo kill -9 `ps ax|grep 'bluetoothd[a-z]' | awk '{print $1}'`
-    sudo kill -9 `ps ax|grep 'bluetoothaudiod[a-z]' | awk '{print $1}'`
+    sudo kill -9 `ps ax | grep 'coreaudio[a-z]' | awk '{print $1}'`
+    sudo kill -9 `ps ax | grep 'bluetooth[a-z]' | awk '{print $1}'`
+    sudo kill -9 `ps ax | grep 'bluetoothaudio[a-z]' | awk '{print $1}'`
     sleep 10
     blueutil -p 1
 }
@@ -72,6 +72,8 @@ export PATH=$PATH:$HOME/go/bin
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 export PATH="$HOME/.jenv/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$HOME/.stack/programs/x86_64-osx/ghc-8.8.2/bin:$PATH"
 
 nvm() {
   echo "🚨 NVM not loaded! Loading now..."
