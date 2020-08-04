@@ -1,7 +1,4 @@
-source ~/.bash_profile
-
 export ZSH=$HOME/.oh-my-zsh
-export TERM="xterm-256color"
 
 ZSH_THEME="pygmalion"
 plugins=(git, pip)
@@ -60,8 +57,12 @@ func restart-bluetooth-audio() {
     blueutil -p 1
 }
 
+func clj-kondo() {
+  docker run -v $PWD/src:/src --rm borkdude/clj-kondo clj-kondo --lint src
+}
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
@@ -75,6 +76,10 @@ export PATH="$HOME/.jenv/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$HOME/.stack/programs/x86_64-osx/ghc-8.8.2/bin:$PATH"
 
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
+export PATH="/usr/local/sbin:$PATH"
+
 nvm() {
   echo "🚨 NVM not loaded! Loading now..."
   unset -f nvm
@@ -86,5 +91,10 @@ nvm() {
 
 source $HOME/.sdkman/bin/sdkman-init.sh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/gamula.v/.sdkman"
-[[ -s "/Users/gamula.v/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/gamula.v/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+alias tmux='tmux -2'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
