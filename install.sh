@@ -51,6 +51,20 @@ install_packages() {
     echo "Install packages... Done"
 }
 
+install_extra_packages() {
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    brew cask install discord
+    brew cask install iina
+    brew cask install qbittorrent
+    brew cask install spectacle
+    brew cask install spotify
+    brew cask install sublime-text
+    brew cask install telegram
+    brew cask install viber
+    brew cask install vlc
+    brew cask install zoomus
+    export HOMEBREW_NO_AUTO_UPDATE=
+}
 
 setup_links() {
     echo "Setup links..."
@@ -77,6 +91,7 @@ setup_java() {
 
 main() {
     install_packages
+    install_extra_packages
     setup_links
 }
 main
