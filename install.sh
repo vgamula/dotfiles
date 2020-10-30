@@ -15,13 +15,19 @@ setup_tpm() {
     echo "Setup tpm... Done"
 }
 
+setup_python() {
+    PYTHON_VERSION=3.9.0
+    OLD_PYTHON_VERSION=2.7.18
+    yes n | pyenv install $PYTHON_VERSION || true
+    yes n | pyenv install $OLD_PYTHON_VERSION || true
+    pyenv global $PYTHON_VERSION
+}
 
 install_packages() {
     echo "Install packages..."
     brew update
     brew upgrade
 
-    export HOMEBREW_NO_AUTO_UPDATE=1
     brew install git
 
     # Shell
@@ -37,6 +43,9 @@ install_packages() {
     brew install fzf
     yes | $(brew --prefix)/opt/fzf/install
 
+    # Editor
+    brew install neovim
+
     # Tools
     brew install dust              # du
     brew install ripgrep           # grep
@@ -47,12 +56,10 @@ install_packages() {
     brew install tokei             # lines of code
     brew install pyenv             # python versions local and global
     brew install pyenv-virtualenv  # python virtualenvs
-    export HOMEBREW_NO_AUTO_UPDATE=
     echo "Install packages... Done"
 }
 
 install_extra_packages() {
-    export HOMEBREW_NO_AUTO_UPDATE=1
     brew cask install discord
     brew cask install iina
     brew cask install qbittorrent
@@ -63,7 +70,12 @@ install_extra_packages() {
     brew cask install viber
     brew cask install vlc
     brew cask install zoomus
-    export HOMEBREW_NO_AUTO_UPDATE=
+}
+
+install_fonts() {
+    brew tap homebrew/cask-fonts
+    brew cask install font-iosevka
+    brew cask install font-iosevka-slab
 }
 
 setup_links() {
@@ -84,14 +96,27 @@ setup_links() {
 
 
 setup_java() {
-    # SDK man
     sdk install java
 }
 
 
 main() {
+    export HOMEBREW_NO_AUTO_UPDATE=1
+
     install_packages
     install_extra_packages
+    install_fonts
     setup_links
+    # next functions require some programs to be already installed -
+    # .zshrc must be sourced here, but i'm not kinda sure if it is possible
+    # as this script will be run by bash and some commands like setopt are not defined here
+    # :thinking_face:
+    # most probably script will fail and restarting it with reloaded shell should work :shrug:
+    # setup_java
+    setup_python
+
+    export HOMEBREW_NO_AUTO_UPDATE=
+
+    echo "Yay, all good!"
 }
 main
