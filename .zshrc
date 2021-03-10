@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
+[ -f ~/.localenv.sh ] && source ~/.localenv.sh
+
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="pygmalion"
+ZSH_THEME="pygmalion-virtualenv2"
 plugins=(
   git
   pip
@@ -37,8 +39,10 @@ export PATH="/Applications/Racket v7.8/bin/:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
 eval "$(pyenv init -)"
-source $HOME/.sdkman/bin/sdkman-init.sh
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias tmux='tmux -2'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.functions
+
+alias subl='code'
+export GPG_TTY=$(tty)

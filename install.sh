@@ -32,7 +32,7 @@ install_packages() {
 
     # Shell
     brew install zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh)"
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh)"
     brew install tmux
     brew install reattach-to-user-namespace
     setup_tpm
@@ -60,22 +60,22 @@ install_packages() {
 }
 
 install_extra_packages() {
-    brew cask install discord
-    brew cask install iina
-    brew cask install qbittorrent
-    brew cask install spectacle
-    brew cask install spotify
-    brew cask install sublime-text
-    brew cask install telegram
-    brew cask install viber
-    brew cask install vlc
-    brew cask install zoomus
+    brew install --cask discord
+    # brew install --cask iina
+    #brew install --cask qbittorrent
+    brew install --cask spectacle
+    brew install --cask spotify
+    brew install --cask visual-studio-code
+    brew install --cask telegram
+    #brew install --cask viber
+    #brew install --cask vlc
+    # brew install --cask zoomus
 }
 
 install_fonts() {
     brew tap homebrew/cask-fonts
-    brew cask install font-iosevka
-    brew cask install font-iosevka-slab
+    brew install --cask font-iosevka
+    brew install --cask font-iosevka-slab
 }
 
 setup_links() {

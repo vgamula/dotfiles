@@ -1,6 +1,7 @@
 [user]
     email = v.gamula@gmail.com
     name = Volodymyr Gamula
+	signingkey = F8BE8A824D216904
 [alias]
     co = checkout
     st = status -sb
@@ -10,3 +11,7 @@
     df = diff
     dfc = diff --cached
     dfa = diff HEAD
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
