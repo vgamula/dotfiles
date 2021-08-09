@@ -61,3 +61,7 @@ func ppl-port-forward() {
     kubectl port-forward $deployment $2:${3:-8080}
     echo "Exit code: $?"
 }
+
+func cht() {
+    curl "cht.sh/$1";
+}
