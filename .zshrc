@@ -38,7 +38,6 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/Applications/Racket v7.8/bin/:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-eval "$(pyenv init -)"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias tmux='tmux -2'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -46,3 +45,7 @@ source ~/.functions
 
 alias subl='code'
 export GPG_TTY=$(tty)
+
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
