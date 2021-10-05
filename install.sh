@@ -16,7 +16,7 @@ setup_tpm() {
 }
 
 setup_python() {
-    PYTHON_VERSION=3.9.0
+    PYTHON_VERSION=3.9.7
     OLD_PYTHON_VERSION=2.7.18
     yes n | pyenv install $PYTHON_VERSION || true
     yes n | pyenv install $OLD_PYTHON_VERSION || true
@@ -56,6 +56,8 @@ install_packages() {
     brew install tokei             # lines of code
     brew install pyenv             # python versions local and global
     brew install pyenv-virtualenv  # python virtualenvs
+    brew install inetutils         # telnet/ftp
+    brew install gnupg             # signed git commits
     echo "Install packages... Done"
 }
 
@@ -91,6 +93,9 @@ setup_links() {
 
     rm -f $HOME/.tmux.conf
     ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+
+    mkdir -p $HOME/.lein
+    ln -s $HOME/dotfiles/.lein/profiles.clj $HOME/.lein/profiles.clj
     echo "Setup links... Done"
 }
 
