@@ -96,6 +96,9 @@ setup_links() {
 
     mkdir -p $HOME/.lein
     ln -s $HOME/dotfiles/.lein/profiles.clj $HOME/.lein/profiles.clj
+
+    mkdir -p $HOME/.gnupg
+    ln -s $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
     echo "Setup links... Done"
 }
 

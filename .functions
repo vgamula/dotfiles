@@ -39,7 +39,7 @@ func restart-bluetooth-audio() {
 }
 
 func clj-kondo() {
-  docker run -v $PWD/src:/src --rm borkdude/clj-kondo clj-kondo --lint src
+  docker run -v $PWD/src:/src --rm cljkondo/clj-kondo clj-kondo --lint src
 }
 
 func nvm() {
