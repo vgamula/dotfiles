@@ -16,10 +16,10 @@ setup_tpm() {
 }
 
 setup_python() {
-    PYTHON_VERSION=3.9.7
-    OLD_PYTHON_VERSION=2.7.18
+    PYTHON_VERSION=3.10.0
     yes n | pyenv install $PYTHON_VERSION || true
-    yes n | pyenv install $OLD_PYTHON_VERSION || true
+    # OLD_PYTHON_VERSION=2.7.18
+    # yes n | pyenv install $OLD_PYTHON_VERSION || true
     pyenv global $PYTHON_VERSION
 }
 
@@ -62,15 +62,15 @@ install_packages() {
 }
 
 install_extra_packages() {
-    brew install --cask discord
+    # brew install --cask discord
     # brew install --cask iina
-    #brew install --cask qbittorrent
-    brew install --cask spectacle
+    # brew install --cask qbittorrent
+    # brew install --cask spectacle
     brew install --cask spotify
     brew install --cask visual-studio-code
-    brew install --cask telegram
-    #brew install --cask viber
-    #brew install --cask vlc
+    # brew install --cask telegram
+    # brew install --cask viber
+    # brew install --cask vlc
     # brew install --cask zoomus
 }
 
@@ -83,22 +83,22 @@ install_fonts() {
 setup_links() {
     echo "Setup links..."
     rm -f $HOME/.functions
-    ln -s $HOME/dotfiles/.functions $HOME/.functions
+    ln -sf $HOME/dotfiles/.functions $HOME/.functions
 
     rm -f $HOME/.zshrc
-    ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+    ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 
     rm -f $HOME/.gitconfig
-    ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+    ln -sf $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 
     rm -f $HOME/.tmux.conf
-    ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+    ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 
     mkdir -p $HOME/.lein
-    ln -s $HOME/dotfiles/.lein/profiles.clj $HOME/.lein/profiles.clj
+    ln -sf $HOME/dotfiles/.lein/profiles.clj $HOME/.lein/profiles.clj
 
     mkdir -p $HOME/.gnupg
-    ln -s $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
+    ln -sf $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
     echo "Setup links... Done"
 }
 
@@ -121,7 +121,7 @@ main() {
     # :thinking_face:
     # most probably script will fail and restarting it with reloaded shell should work :shrug:
     # setup_java
-    setup_python
+    # setup_python
 
     export HOMEBREW_NO_AUTO_UPDATE=
 

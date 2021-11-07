@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+export PATH=/opt/homebrew/bin:$PATH
+
 [ -f ~/.localenv.sh ] && source ~/.localenv.sh
 
 export ZSH=$HOME/.oh-my-zsh

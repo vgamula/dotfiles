@@ -1,7 +1,7 @@
 [user]
     email = v.gamula@gmail.com
     name = Volodymyr Gamula
-	signingkey = F8BE8A824D216904
+	signingkey = 622E22FFD6FB5444
 [alias]
     co = checkout
     st = status -sb
