@@ -30,15 +30,9 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/go/bin
-export PATH="$HOME/Library/Haskell/bin:$PATH"
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="$HOME/.local/bin:$HOME/.stack/programs/x86_64-osx/ghc-8.8.2/bin:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
-export PATH="/Applications/Racket v7.8/bin/:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias tmux='tmux -2'

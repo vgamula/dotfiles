@@ -3,4 +3,4 @@
                        [com.clojure-goes-fast/clj-memory-meter "0.1.3"]
                        [criterium "0.4.6"]
                        [nrepl "0.8.3"]]
-        :plugins []}}
+        :plugins [[lein-ancient "1.0.0-RC3"]]}}

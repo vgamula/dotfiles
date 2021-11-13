@@ -108,6 +108,11 @@ setup_java() {
 }
 
 
+setup_devtools {
+    brew install libpq
+}
+
+
 main() {
     export HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -122,6 +127,7 @@ main() {
     # most probably script will fail and restarting it with reloaded shell should work :shrug:
     # setup_java
     # setup_python
+    # setup_devtools
 
     export HOMEBREW_NO_AUTO_UPDATE=
 
