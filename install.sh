@@ -32,7 +32,7 @@ install_packages() {
 
     # Shell
     brew install zsh
-    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || zsh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/upgrade.sh)"
+    brew install starship
     brew install tmux
     brew install reattach-to-user-namespace
     setup_tpm
@@ -108,7 +108,7 @@ setup_java() {
 }
 
 
-setup_devtools {
+setup_devtools() {
     brew install libpq
 }
 
