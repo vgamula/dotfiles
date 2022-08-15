@@ -54,6 +54,7 @@ install_packages() {
     brew install fd                # find
     brew install procs             # top
     brew install tokei             # lines of code
+    brew install hyperfine         # benchmarking
     brew install pyenv             # python versions local and global
     brew install pyenv-virtualenv  # python virtualenvs
     brew install inetutils         # telnet/ftp

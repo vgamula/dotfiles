@@ -16,6 +16,9 @@ export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+# Fly.io
+export FLYCTL_INSTALL="/Users/vgamula/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 alias tmux='tmux -2'
