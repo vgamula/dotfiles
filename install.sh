@@ -55,10 +55,12 @@ install_packages() {
     brew install procs             # top
     brew install tokei             # lines of code
     brew install hyperfine         # benchmarking
+    brew install oha               # http benchmarking
     brew install pyenv             # python versions local and global
     brew install pyenv-virtualenv  # python virtualenvs
     brew install inetutils         # telnet/ftp
-    brew install gnupg             # signed git commits
+    brew install gnupg             # signed stuff
+    brew install pinentry          # signed stuff
     echo "Install packages... Done"
 }
 

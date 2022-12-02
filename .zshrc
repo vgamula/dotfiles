@@ -13,6 +13,7 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export SDKMAN_DIR="$HOME/.sdkman"
 
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
