@@ -31,14 +31,14 @@ install_packages() {
     brew install git
 
     # Shell
-    brew install zsh
+    brew install fish
     brew install starship
     brew install tmux
     brew install reattach-to-user-namespace
     setup_tpm
-    if [[ ! $SHELL == *"zsh"* ]];
+    if [[ ! $SHELL == *"fish"* ]];
     then
-        chsh -s $(which zsh)
+        chsh -s $(which fish)
     fi
     brew install fzf
     yes | $(brew --prefix)/opt/fzf/install
@@ -88,8 +88,11 @@ setup_links() {
     rm -f $HOME/.functions
     ln -sf $HOME/dotfiles/.functions $HOME/.functions
 
-    rm -f $HOME/.zshrc
-    ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
+    # rm -f $HOME/.zshrc
+    # ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
+
+    rm -f $HOME/.config/fish/config.fish
+    ln -sf $HOME/dotfiles/.config/fish/config.fish $HOME/.config/fish/config.fish
 
     rm -f $HOME/.gitconfig
     ln -sf $HOME/dotfiles/.gitconfig $HOME/.gitconfig
