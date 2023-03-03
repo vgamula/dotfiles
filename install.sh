@@ -60,7 +60,7 @@ install_packages() {
     brew install pyenv-virtualenv  # python virtualenvs
     brew install inetutils         # telnet/ftp
     brew install gnupg             # signed stuff
-    brew install pinentry          # signed stuff
+    brew install pinentry-mac      # signed stuff
     echo "Install packages... Done"
 }
 
