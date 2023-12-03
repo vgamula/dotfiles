@@ -5,7 +5,8 @@ set -x PATH $PATH /opt/homebrew/bin
 set -x PATH $PATH $HOME/bin
 set -x PATH $PATH $HOME/.local/bin
 set -x PATH $PATH $HOME/.cargo/bin
-set -x PATH $PATH /usr/local/sbin 
+set -x PATH $PATH /usr/local/bin
+set -x PATH $PATH /usr/local/sbin
 set -x PATH $PATH /opt/homebrew/opt/libpq/bin
 
 # Fly.io
@@ -37,3 +38,6 @@ status --is-interactive; and pyenv virtualenv-init - | source
 
 # Starship
 starship init fish | source
+
+# opam configuration
+source /Users/vgamula/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
