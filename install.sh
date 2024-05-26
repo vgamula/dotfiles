@@ -78,7 +78,6 @@ install_extra_packages() {
 }
 
 install_fonts() {
-    brew tap homebrew/cask-fonts
     brew install --cask font-iosevka
     brew install --cask font-iosevka-slab
 }
