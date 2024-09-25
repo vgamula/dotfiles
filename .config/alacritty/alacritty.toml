@@ -1,0 +1,23 @@
+import = [
+  "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+# shell = "/opt/homebrew/bin/fish"
+shell = "/opt/homebrew/bin/zellij"
+live_config_reload = true
+
+[window]
+dynamic_title = true
+dynamic_padding = true
+# decorations = "Buttonless"
+opacity = 0.9
+blur = true
+option_as_alt = "Both"
+
+[scrolling]
+history = 100000
+multiplier = 1
+
+[font]
+normal = { family = "Iosevka", style = "Regular" }
+size = 14

@@ -2,19 +2,8 @@
 
 set -e
 
-setup_tpm() {
-    echo "Setup tpm..."
-    if [[ -d "$HOME/.tmux/plugins/tpm" ]];
-    then
-        echo "tpm already exists, updating..."
-        (cd ~/.tmux/plugins/tpm && git pull origin master)
-    else
-        echo "tpm does not exist, clonning..."
-        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    fi
-    echo "Setup tpm... Done"
-}
 
+# TODO: review this
 setup_python() {
     PYTHON_VERSION=3.10.0
     yes n | pyenv install $PYTHON_VERSION || true
@@ -31,15 +20,15 @@ install_packages() {
     brew install git
 
     # Shell
-    brew install fish
+    brew install fish fisher
     brew install starship
-    brew install tmux
-    brew install reattach-to-user-namespace
-    setup_tpm
-    if [[ ! $SHELL == *"fish"* ]];
-    then
-        chsh -s $(which fish)
-    fi
+    brew install zellij
+
+    # brew install reattach-to-user-namespace
+    #if [[ ! $SHELL == *"fish"* ]];
+    #then
+    #    chsh -s $(which fish)
+    #fi
     brew install fzf
     yes | $(brew --prefix)/opt/fzf/install
 
@@ -61,6 +50,11 @@ install_packages() {
     brew install inetutils         # telnet/ftp
     brew install gnupg             # signed stuff
     brew install pinentry-mac      # signed stuff
+
+    # TODO: extra into setup_shell?
+    # fisher install reitzig/sdkman-for-fis
+    # fisher install catppuccin/fish
+
     echo "Install packages... Done"
 }
 
@@ -90,14 +84,14 @@ setup_links() {
     # rm -f $HOME/.zshrc
     # ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 
+    rm -rf $HOME/.config/alacritty
+    ln -sf $HOME/dotfiles/.config/alacritty $HOME/.config/alacritty
+
     rm -f $HOME/.config/fish/config.fish
     ln -sf $HOME/dotfiles/.config/fish/config.fish $HOME/.config/fish/config.fish
 
     rm -f $HOME/.gitconfig
     ln -sf $HOME/dotfiles/.gitconfig $HOME/.gitconfig
-
-    rm -f $HOME/.tmux.conf
-    ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 
     mkdir -p $HOME/.lein
     ln -sf $HOME/dotfiles/.lein/profiles.clj $HOME/.lein/profiles.clj
@@ -107,16 +101,14 @@ setup_links() {
     echo "Setup links... Done"
 }
 
+# setup_java() {
+#     sdk install java
+# }
 
-setup_java() {
-    sdk install java
-}
 
-
-setup_devtools() {
-    brew install libpq
-}
-
+# setup_devtools() {
+#     brew install libpq
+# }
 
 main() {
     export HOMEBREW_NO_AUTO_UPDATE=1

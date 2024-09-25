@@ -8,23 +8,13 @@ set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH /usr/local/sbin
 set -x PATH $PATH /opt/homebrew/opt/libpq/bin
+set -x JAVA_HOME $HOME/.sdkman/candidates/java/current
 
 # Fly.io
 set -x FLYCTL_INSTALL "/Users/vgamula/.fly"
 set -x PATH "$FLYCTL_INSTALL/bin" $PATH
 
-# set -x SDKMAN_DIR "$HOME/.sdkman"
-# if test -s "$HOME/.sdkman/bin/sdkman-init.sh"
-#     source "$HOME/.sdkman/bin/sdkman-init.sh"
-# end
-
 alias tmux 'tmux -2'
-
-# if test -f ~/.fzf.zsh
-#     source ~/.fzf.zsh
-# end
-
-# source ~/.functions
 
 # Signed commits
 set -x GPG_TTY (tty)
@@ -40,4 +30,6 @@ status --is-interactive; and pyenv virtualenv-init - | source
 starship init fish | source
 
 # opam configuration
-source /Users/vgamula/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+yes | fish_config theme save "Catppuccin Frappe"
