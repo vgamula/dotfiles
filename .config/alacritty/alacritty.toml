@@ -1,10 +1,3 @@
-import = [
-  "~/.config/alacritty/catppuccin-frappe.toml"
-]
-
-# shell = "/opt/homebrew/bin/fish"
-shell = "/opt/homebrew/bin/zellij"
-live_config_reload = true
 
 [window]
 dynamic_title = true
@@ -21,3 +14,12 @@ multiplier = 1
 [font]
 normal = { family = "Iosevka", style = "Regular" }
 size = 14
+
+[general]
+live_config_reload = true
+import = [
+  "~/.config/alacritty/catppuccin-frappe.toml"
+]
+
+[terminal]
+shell = "/opt/homebrew/bin/zellij"

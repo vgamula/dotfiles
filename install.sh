@@ -39,7 +39,7 @@ install_packages() {
     brew install dust              # du
     brew install ripgrep           # grep
     brew install bat               # cat
-    brew install exa               # ls
+    brew install eza               # ls
     brew install fd                # find
     brew install procs             # top
     brew install tokei             # lines of code
@@ -50,6 +50,8 @@ install_packages() {
     brew install inetutils         # telnet/ftp
     brew install gnupg             # signed stuff
     brew install pinentry-mac      # signed stuff
+    brew install lazygit           # git tui
+    brew install zellij            # terminal multiplexer
 
     # TODO: extra into setup_shell?
     # fisher install reitzig/sdkman-for-fis
@@ -62,11 +64,11 @@ install_extra_packages() {
     # brew install --cask discord
     # brew install --cask iina
     # brew install --cask qbittorrent
-    # brew install --cask spectacle
+    brew install --cask raycast
     brew install --cask spotify
     brew install --cask visual-studio-code
+    brew install --cask zed
     # brew install --cask telegram
-    # brew install --cask viber
     # brew install --cask vlc
     # brew install --cask zoomus
 }
@@ -80,9 +82,6 @@ setup_links() {
     echo "Setup links..."
     rm -f $HOME/.functions
     ln -sf $HOME/dotfiles/.functions $HOME/.functions
-
-    # rm -f $HOME/.zshrc
-    # ln -sf $HOME/dotfiles/.zshrc $HOME/.zshrc
 
     rm -rf $HOME/.config/alacritty
     ln -sf $HOME/dotfiles/.config/alacritty $HOME/.config/alacritty
@@ -98,17 +97,12 @@ setup_links() {
 
     mkdir -p $HOME/.gnupg
     ln -sf $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
+
+    mkdir -p $HOME/config/zellij
+    rm -rf rm -f $HOME/.config/zellij/config.kdl
+    ln -sf $HOME/dotfiles/.config/zellij/config.kdl $HOME/.config/zellij/config.kdl
     echo "Setup links... Done"
 }
-
-# setup_java() {
-#     sdk install java
-# }
-
-
-# setup_devtools() {
-#     brew install libpq
-# }
 
 main() {
     export HOMEBREW_NO_AUTO_UPDATE=1
@@ -117,15 +111,6 @@ main() {
     install_extra_packages
     install_fonts
     setup_links
-    # next functions require some programs to be already installed -
-    # .zshrc must be sourced here, but i'm not kinda sure if it is possible
-    # as this script will be run by bash and some commands like setopt are not defined here
-    # :thinking_face:
-    # most probably script will fail and restarting it with reloaded shell should work :shrug:
-    # setup_java
-    # setup_python
-    # setup_devtools
-
     export HOMEBREW_NO_AUTO_UPDATE=
 
     echo "Yay, all good!"

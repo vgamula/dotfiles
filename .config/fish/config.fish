@@ -33,3 +33,5 @@ starship init fish | source
 source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 yes | fish_config theme save "Catppuccin Frappe"
+
+alias code zed
