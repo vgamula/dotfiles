@@ -2,16 +2,6 @@
 
 set -e
 
-
-# TODO: review this
-setup_python() {
-    PYTHON_VERSION=3.10.0
-    yes n | pyenv install $PYTHON_VERSION || true
-    # OLD_PYTHON_VERSION=2.7.18
-    # yes n | pyenv install $OLD_PYTHON_VERSION || true
-    pyenv global $PYTHON_VERSION
-}
-
 install_packages() {
     echo "Install packages..."
     brew update
@@ -45,8 +35,7 @@ install_packages() {
     brew install tokei             # lines of code
     brew install hyperfine         # benchmarking
     brew install oha               # http benchmarking
-    brew install pyenv             # python versions local and global
-    brew install pyenv-virtualenv  # python virtualenvs
+    brew install uv                # python versions and envs
     brew install inetutils         # telnet/ftp
     brew install gnupg             # signed stuff
     brew install pinentry-mac      # signed stuff
@@ -65,7 +54,7 @@ install_extra_packages() {
     # brew install --cask iina
     # brew install --cask qbittorrent
     brew install --cask raycast
-    brew install --cask spotify
+    # brew install --cask spotify
     brew install --cask visual-studio-code
     brew install --cask zed
     # brew install --cask telegram
@@ -101,6 +90,9 @@ setup_links() {
     mkdir -p $HOME/config/zellij
     rm -rf rm -f $HOME/.config/zellij/config.kdl
     ln -sf $HOME/dotfiles/.config/zellij/config.kdl $HOME/.config/zellij/config.kdl
+
+    rm -rf rm -f $HOME/.config/starship.toml
+    ln -sf $HOME/dotfiles/.config/starship.toml $HOME/.config/starship.toml
     echo "Setup links... Done"
 }
 
@@ -108,7 +100,7 @@ main() {
     export HOMEBREW_NO_AUTO_UPDATE=1
 
     install_packages
-    install_extra_packages
+    # install_extra_packages
     install_fonts
     setup_links
     export HOMEBREW_NO_AUTO_UPDATE=
