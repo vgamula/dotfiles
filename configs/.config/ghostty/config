@@ -1,0 +1,30 @@
+#
+#
+# Run cmd+shift+, to reload config
+#
+#
+
+command = /opt/homebrew/bin/zellij attach --create default
+
+mouse-scroll-multiplier = 0.5
+window-decoration = true
+window-padding-x = 5
+window-padding-y = 0
+window-height = 60
+window-width = 230
+
+theme = catppuccin-frappe
+cursor-text = 303446
+cursor-color = f2d5cf
+font-family = "Iosevka Nerd Font"
+font-size = 15
+macos-titlebar-style = transparent
+title = ""
+
+# Unbind CMD+... keys so they will be forwarded to Zellij
+keybind = cmd+t=unbind
+keybind = cmd+n=unbind
+keybind = cmd+c=unbind
+keybind = cmd+w=unbind
+keybind = cmd+opt+left=unbind
+keybind = cmd+opt+right=unbind

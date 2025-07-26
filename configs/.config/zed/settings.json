@@ -1,0 +1,70 @@
+{
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "agent": {
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "theme": "Catppuccin Frappé",
+  "show_whitespaces": "boundary",
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "buffer_font_family": "Iosevka",
+  "terminal": {
+    "shell": {
+      "program": "/opt/homebrew/bin/fish"
+    }
+  },
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "vim_mode": true,
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "basic"
+        },
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        }
+      }
+    },
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 120
+        }
+      }
+    }
+  },
+  "languages": {
+    "C": {
+      "format_on_save": "on",
+      "tab_size": 2
+    },
+    "Python": {
+      "format_on_save": "off",
+      "language_servers": ["pyright", "ruff"],
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  }
+}
