@@ -3,18 +3,23 @@
     "edit_prediction_provider": "zed"
   },
   "agent": {
-    "default_profile": "write",
+    "default_profile": "ask",
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4-latest"
     }
   },
-  "theme": "Catppuccin Frappé",
+  "theme": {
+    "mode": "system",
+    "dark": "Catppuccin Frappé",
+    "light": "Catppuccin Latte"
+  },
   "show_whitespaces": "boundary",
   "ui_font_size": 15,
+  "ui_font_family": "Iosevka Nerd Font",
   "buffer_font_size": 15,
-  "buffer_font_family": "Iosevka",
+  "buffer_font_family": "Iosevka Nerd Font",
   "terminal": {
     "shell": {
       "program": "/opt/homebrew/bin/fish"
@@ -24,6 +29,7 @@
     "mode": "subtle"
   },
   "vim_mode": true,
+  "relative_line_numbers": true,
   "lsp": {
     "pyright": {
       "settings": {
@@ -50,7 +56,7 @@
       "tab_size": 2
     },
     "Python": {
-      "format_on_save": "off",
+      "format_on_save": "on",
       "language_servers": ["pyright", "ruff"],
       "formatter": [
         {
