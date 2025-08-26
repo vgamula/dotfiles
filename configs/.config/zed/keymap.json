@@ -9,7 +9,11 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "space space": "file_finder::Toggle"
+      "space space": "file_finder::Toggle",
+      "left": null,
+      "right": null,
+      "up": null,
+      "down": null
     }
   },
   {
@@ -19,7 +23,10 @@
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j k": "vim::NormalBefore"
+      "left": null,
+      "right": null,
+      "up": null,
+      "down": null
     }
   }
 ]
