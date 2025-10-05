@@ -13,7 +13,7 @@ window-padding-y = 0
 window-height = 60
 window-width = 230
 
-theme = catppuccin-frappe
+theme = Catppuccin Frappe
 cursor-text = 303446
 cursor-color = f2d5cf
 font-family = "Iosevka Nerd Font"
