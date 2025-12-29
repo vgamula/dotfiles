@@ -16,6 +16,6 @@ window-width = 230
 theme = Catppuccin Frappe
 cursor-text = 303446
 cursor-color = f2d5cf
-font-family = "Iosevka Nerd Font"
+font-family = "IosevkaTerm Nerd Font"
 font-size = 15
 macos-titlebar-style = transparent
