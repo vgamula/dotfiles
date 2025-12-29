@@ -10,7 +10,6 @@ brew upgrade
 packages=(
   git           # vcs
   fish          # shell
-  zellij        # terminal multiplexer
   starship      # shell prompt
   fzf           # fuzzy file search
   neovim        # one more text editor
@@ -28,7 +27,6 @@ packages=(
   gnupg         # signed stuff
   pinentry-mac  # signed stuff
   lazygit       # git tui
-  zellij        # terminal multiplexer
   stow          # symlinks
   1password-cli # secrets
 )
