@@ -8,6 +8,7 @@ set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH /usr/local/sbin
 set -x PATH $PATH /opt/homebrew/opt/libpq/bin
 set -x PATH $PATH /opt/homebrew/opt/openjdk/bin
+set -x PATH $PATH $HOME/.bun/bin
 set -x JAVA_HOME /opt/homebrew/opt/openjdk
 # Fly.io
 set -x FLYCTL_INSTALL "/Users/$USER/.fly"
@@ -15,7 +16,7 @@ set -x PATH "$FLYCTL_INSTALL/bin" $PATH
 # Signed commits
 set -x GPG_TTY (tty)
 # opam configuration
-source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source $HOME/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 
 alias code zed
 alias python 'uv run python'
