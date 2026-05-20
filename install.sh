@@ -50,6 +50,6 @@ brew install --cask "${casks[@]}"
 brew cleanup --prune=all
 
 mkdir -p ~/.config
-stow configs
+stow --no-folding configs
 
 echo "✅"

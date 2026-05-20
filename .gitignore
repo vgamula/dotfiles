@@ -1,0 +1,7 @@
+configs/.config/fish/fish_variables
+
+configs/.config/zed/.gitignore
+configs/.config/zed/prompts/
+
+configs/.gnupg/*
+!configs/.gnupg/gpg-agent.conf
