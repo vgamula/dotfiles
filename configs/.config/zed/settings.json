@@ -1,7 +1,10 @@
 {
+  "cli_default_open_behavior": "new_window",
   "agent": {
+    "tool_permissions": {
+      "default": "confirm",
+    },
     "default_profile": "ask",
-    "always_allow_tool_actions": true,
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4",

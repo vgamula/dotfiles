@@ -29,18 +29,22 @@ packages=(
   lazygit       # git tui
   stow          # symlinks
   1password-cli # secrets
+  node          # JavaScript runtime
 )
 brew install "${packages[@]}"
 
 casks=(
+  1password
+  google-chrome
+  telegram
   ghostty
   discord
   raycast
   spotify
   zed
   font-iosevka
-  font-iosevka-slab
   font-iosevka-nerd-font
+  font-iosevka-term-nerd-font
 )
 brew install --cask "${casks[@]}"
 brew cleanup --prune=all
