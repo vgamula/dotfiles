@@ -14,8 +14,6 @@ window-height = 60
 window-width = 230
 
 theme = Catppuccin Frappe
-cursor-text = 303446
-cursor-color = f2d5cf
 font-family = "IosevkaTerm Nerd Font Mono"
 font-size = 15
 macos-titlebar-style = transparent

@@ -1,6 +1,7 @@
 # Path
 set fish_greeting
 set -x PATH $PATH /opt/homebrew/bin
+set -x PATH $PATH /Applications/OrbStack.app/Contents/MacOS/xbin
 set -x PATH $PATH $HOME/bin
 set -x PATH $PATH $HOME/.local/bin
 set -x PATH $PATH $HOME/.cargo/bin
@@ -27,4 +28,3 @@ starship init fish | source
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/vgamula/.lmstudio/bin
 # End of LM Studio CLI section
-

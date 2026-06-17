@@ -30,6 +30,7 @@ packages=(
   stow          # symlinks
   1password-cli # secrets
   node          # JavaScript runtime
+  orbstack      # containers
 )
 brew install "${packages[@]}"
 

@@ -1,4 +1,17 @@
 {
+  "sticky_scroll": {
+    "enabled": false,
+  },
+  "proxy": "",
+  "project_panel": {
+    "dock": "left",
+  },
+  "prettier": {
+    "parser": "",
+  },
+  "which_key": {
+    "enabled": true,
+  },
   "cli_default_open_behavior": "new_window",
   "agent": {
     "tool_permissions": {
