@@ -46,13 +46,6 @@
   "vim_mode": true,
   "relative_line_numbers": "enabled",
   "lsp": {
-    "ruff": {
-      "initialization_options": {
-        "settings": {
-          "lineLength": 120,
-        },
-      },
-    },
     "pyrefly": {
       "binary": {
         "path": ".venv/bin/pyrefly",
@@ -87,15 +80,14 @@
     "Python": {
       "format_on_save": "on",
       "language_servers": ["pyrefly", "ruff"],
-      "formatter": [
-        { "code_action": "source.organizeImports.ruff" },
-        { "code_action": "source.fixAll.ruff" },
-        {
-          "language_server": {
-            "name": "ruff",
-          },
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
         },
-      ],
+      },
     },
     "SQL": {
       "formatter": {
