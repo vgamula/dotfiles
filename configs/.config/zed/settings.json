@@ -53,6 +53,23 @@
         },
       },
     },
+    "pyrefly": {
+      "binary": {
+        "path": ".venv/bin/pyrefly",
+        "arguments": ["lsp"],
+      },
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python",
+        },
+        "pyrefly": {
+          "project_includes": ["src/**/*.py", "tests/**/*.py"],
+          "project_excludes": ["**/.[!/.]*", "**/*venv/**"],
+          "search_path": ["src"],
+          "ignore_errors_in_generated_code": true,
+        },
+      },
+    },
   },
   "languages": {
     "Plain Text": {
@@ -69,7 +86,7 @@
     },
     "Python": {
       "format_on_save": "on",
-      "language_servers": ["pyright", "ruff"],
+      "language_servers": ["pyrefly", "ruff"],
       "formatter": [
         { "code_action": "source.organizeImports.ruff" },
         { "code_action": "source.fixAll.ruff" },
